@@ -1,0 +1,241 @@
+/* 公共部分 */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei", "宋体", "san-serif", "IcoMoon-Free";
+    font-size: 14px;
+    transition: 0.15s;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+input {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+    border: 1px solid #0DA3E2;
+}
+
+.main {
+    max-width: 1024px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    /* background-color: #38e20d6b; */
+}
+
+.main * {
+    display: flex;
+}
+
+/* ---------------- */
+/* 头部 */
+.header {
+    width: 100%;
+    position: relative;
+    z-index: 9;
+}
+
+.header-top {
+    height: 35px;
+    position: relative;
+    background: #f3f3f3;
+    border-bottom: 1px #ddd solid;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.header-top>div {
+    align-items: center;
+}
+
+.header-top a {
+    font-size: 12px;
+    color: #333333;
+}
+
+.header-top img {
+    position: absolute;
+    margin-left: 172px;
+    top: -10px;
+}
+
+.header-logo {
+    height: 80px;
+    border-bottom: 1px #ddd solid;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.header-logo>div {
+    justify-content: space-between;
+}
+
+.header-logo a {
+    align-items: center;
+}
+
+.nav-ul a {
+    width: 80px;
+    color: #000000;
+    justify-content: center;
+}
+
+/* ---------------- */
+/* 主要 */
+#content {
+    overflow: hidden;
+}
+
+@media(min-width:1024px) {
+    .header {
+        height: 115px;
+        /* background-color: #0DA3E2; */
+    }
+
+    /* -----mask----- */
+
+    .header-logo a img {
+        height: 65px;
+    }
+
+    .nav {
+        position: relative;
+    }
+
+    .nav-ul {
+        height: auto !important;
+        z-index: 9;
+    }
+
+    /* .nav-ul li:nth-last-child(1) {
+        border: 0;
+        display: none;
+    } */
+
+    .nav-mask {
+        width: 80px;
+        height: 100%;
+        background-color: #fafafa;
+        box-sizing: border-box;
+        border-top: 3px solid #0DA3E2;
+        justify-content: center;
+        position: absolute;
+        /* z-index: 0; */
+    }
+
+    .nav-mask-triangle {
+        border: solid 6px;
+        border-color: #0DA3E2 transparent transparent;
+    }
+
+    #content {
+        display: flex !important;
+    }
+
+}
+
+@media (max-width:1023px) {
+
+    .header {
+        height: 50px;
+    }
+
+    .header-top {
+        display: none;
+    }
+
+    .header-logo {
+        height: 50px;
+        /* overflow-y: scroll; */
+    }
+
+    .header-logo a img {
+        height: 35px;
+    }
+
+    .nav-mask {
+        display: none;
+    }
+
+    .nav-ul {
+        position: absolute;
+        width: 100%;
+        /* width: 0; */
+        height: 0;
+        /* height: calc(100% - 50px); */
+        /* overflow: hidden; */
+        overflow-y: scroll;
+        background-color: #f3f3f3;
+        left: 0;
+        margin-top: 50px;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.4s;
+    }
+
+    .nav-ul::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .nav-ul::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: #ddd;
+    }
+
+    .nav-ul li {
+        width: 80%;
+        height: 45px;
+        border-bottom: 1px #ddd solid;
+        box-sizing: border-box;
+    }
+
+    /* -----------X号---------- */
+    .nav-x {
+        width: 50px;
+        /* background-color: #0da2e200; */
+        justify-content: center;
+        /* 上下居中 */
+        align-items: center;
+        /* 左右居中 */
+        flex-direction: column;
+        /* 上下排列 */
+        cursor: pointer;
+    }
+
+    /* -----------上横线---------- */
+    .nav-x-a {
+        width: 17px;
+        height: 1.5px;
+        border-radius: 1.5px;
+        background-color: #0DA3E2;
+        margin-top: -7px;
+        /* transform: rotate(45deg); */
+        position: absolute;
+    }
+
+    /* -----------下横线---------- */
+    .nav-x-b {
+        width: 17px;
+        height: 1.5px;
+        border-radius: 1.5px;
+        background-color: #0DA3E2;
+        margin-bottom: -7px;
+        /* transform: rotate(-45deg); */
+        position: absolute;
+    }
+
+    .nav-ul a {
+        /* display: inline-block; */
+        justify-content: left;
+        /* align-items: center; */
+    }
+}
